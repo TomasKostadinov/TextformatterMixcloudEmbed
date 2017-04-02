@@ -126,7 +126,6 @@ class TextformatterMixcloudEmbed extends Textformatter implements ConfigurableMo
 			$match = str_replace("</p>", "", $match);
 			$mixcloudId = str_replace("https", "http", $match);
 			$oembedURL = "http://mixcloud.com/oembed?".$this->getOembedParameters()."format=json&url=".urlencode($match);
-			var_dump($oembedURL);
 			$embedCode = $this->getEmbedCode($oembedURL, $mixcloudId);
 
 			if ($embedCode) $str = str_replace($match, $embedCode, $str);
